@@ -26,11 +26,12 @@ end tell
 -- getting values for each record
 set vals to {}
 set AppleScript's text item delimiters to ","
-repeat with i from 1 to length of recs
+repeat with i from 2 to length of recs
 	set end of vals to text items of (item i of recs)
-	set kcURL to text item 1 of (item i of recs)
-	set kcUsername to text item 2 of (item i of recs)
-	set kcPassword to text item 3 of (item i of recs)
+	set name to text item 1 of (item i of recs)
+	set kcURL to text item 2 of (item i of recs)
+	set kcUsername to text item 3 of (item i of recs)
+	set kcPassword to text item 4 of (item i of recs)
 	
 	-- write kcURL, kcUsername and kcPassword into text fields of safari passwords
 	tell application "System Events"
